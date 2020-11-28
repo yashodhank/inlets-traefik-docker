@@ -119,7 +119,8 @@ services:
 ############################# INLETS
 
   inlets:
-    image: kumekay/inlets:latest
+    image: kumekay/inlets:latest 
+#    image: inlets/inlets:2.7.9 # (OFFICIAL LATEST)
     restart: always
     container_name: inlets
     hostname: ${SUBDOMAINPREFIX:-exit}.${DOMAINNAME}
