@@ -19,7 +19,7 @@
   [http.middlewares.middlewares-secure-headers]
     [http.middlewares.middlewares-secure-headers.headers]
       accessControlAllowMethods = ["GET", "OPTIONS", "PUT"]
-      accessControlAllowOriginList = ["https://biso.work","https://google.com","http://biso.co.in", "http://localhost", "https://bisopay.in", "https://re.bisopay.in"]
+      accessControlAllowOriginList = ["https://example.com","https://google.com","http://example.co.in", "http://localhost", "https://example.in", "https://exit.example.in"]
       accessControlMaxAge = 100
       hostsProxyHeaders = ["X-Forwarded-Host"]
       sslRedirect = true
@@ -28,7 +28,7 @@
       stsPreload = true
       forceSTSHeader = true
 #      frameDeny = true #overwritten by customFrameOptionsValue
-      customFrameOptionsValue = "allow-from https:biso.work" #CSP takes care of this but may be needed for organizr.
+      customFrameOptionsValue = "allow-from https:example.com" #CSP takes care of this but may be needed for organizr.
       contentTypeNosniff = false
       browserXssFilter = false
 #      sslForceHost = true # add sslHost and all of the
@@ -46,11 +46,11 @@
 #        X-Forwarded-Port=443
 #        X-Forwarded-Proto=https
 
-  [http.middlewares.middlewares-oauth]
-    [http.middlewares.middlewares-oauth.forwardAuth]
-      address = "http://oauth:4181" # Make sure you have the OAuth service in docker-compose.yml
-      trustForwardHeader = true
-      authResponseHeaders = ["X-Forwarded-User"]
+#  [http.middlewares.middlewares-oauth]
+#    [http.middlewares.middlewares-oauth.forwardAuth]
+#      address = "http://oauth:4181" # Make sure you have the OAuth service in docker-compose.yml
+#      trustForwardHeader = true
+#      authResponseHeaders = ["X-Forwarded-User"]
 
   [http.middlewares.middlewares-basic-auth]
     [http.middlewares.middlewares-basic-auth.basicAuth]
