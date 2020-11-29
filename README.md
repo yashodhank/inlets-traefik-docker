@@ -23,8 +23,8 @@ inlets client --upstream "mysubdomain.exit.domain.ext=http://127.0.0.1:LOCALPORT
 
 #### Windows Inlets Client
 1. First Download NSSM (it helps creates windows service of inlet client): https://nssm.cc/download
-2. For simplycity, I copied nssm.exe & inlets.exe to C:\Windows\
-3. created inlet-service-install.cmd file with following
+2. For simplycity, I copied `nssm.exe` & `inlets.exe` to `C:\Windows\`
+3. created `inlet-service-install.cmd` file with following and run with administrator rights from `cmd.exe`
 ```bat
 nssm install my.service.name C:\Windows\inlets.exe
 nssm set my.service.name AppParameters ^"client --upstream=^\^"mysubdomain.exit.domain.ext=http://127.0.0.1:LOCALPORT^\^" --remote=wss://exit.domain.ext --token=REPLACE_WITH_YOUR_ACTUAL_INLET_SERVER_TOKEN^"
@@ -47,5 +47,7 @@ nssm set my.service.name Type SERVICE_WIN32_OWN_PROCESS
 ```
 
 In case of `mysubdomain.exit.domain.ext` mentioned above `mysubdomain` part can be changed to anything you may like.
+
 http://127.0.0.1:LOCALPORT is having IIS/Apache running locally on my machine serving demo site.
+
 Feel free to modify and use as per your usecase.
