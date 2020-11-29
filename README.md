@@ -6,11 +6,11 @@ Traefik handles SSL for all subdomains of `*.exit.domain.ext` automatically with
 ### DNS Records for exit node / server
 ```dns
 ;; A Records
-domain.ext.         1	IN	A	1.2.3.4
-exit.domain.ext.	  1	IN	A	1.2.3.4
+domain.ext.              1	IN	A	1.2.3.4
+exit.domain.ext.         1	IN	A	1.2.3.4
 
 ;; CNAME Records
-*.exit.domain.ext.	1	IN	CNAME	exit.domain.ext.
+*.exit.domain.ext.       1	IN	CNAME	exit.domain.ext.
 ```
 
 ### Inlets Client Connection
